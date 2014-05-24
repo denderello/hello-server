@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run -t --rm denderello/hello-server
+docker run -d -p 8080:8000 denderello/hello-server
