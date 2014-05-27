@@ -5,7 +5,7 @@ mkdir -p build/{src/github.com/denderello/hello-server,pkg,bin}
 
 # link all needed projects files to intermediate GOPATH
 # build the final container with the compiled binary
-(cd build/src/github.com/denderello/hello-server ; ln -f ../../../../../*.go)
+(cd build/src/github.com/denderello/hello-server ; ln -f ../../../../../*.go .)
 (cd build ; ln -f ../Makefile)
 
 # build the development Docker container
