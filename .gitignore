@@ -1,2 +1,4 @@
 /code/bin
-/build/
+
+/.gobuild
+/hello-server

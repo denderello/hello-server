@@ -1,6 +1,6 @@
-FROM denderello/docker-golang
+FROM busybox:ubuntu-14.04
 
-ADD build/bin/hello-server /opt/hello-server
+ADD hello-server /opt/hello-server
 
 CMD ["/opt/hello-server"]
 
