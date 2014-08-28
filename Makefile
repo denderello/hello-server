@@ -12,6 +12,8 @@ SOURCE=$(shell find . -name '*.go')
 
 BIN := $(PROJECT)
 
+VERSION := $(shell cat VERSION)
+
 all: .gobuild get-deps $(BIN)
 
 get-deps:
@@ -23,7 +25,7 @@ get-deps:
 	cd "$(D0_PATH)" && ln -s ../../../.. $(PROJECT)
 
 $(BIN): 
-	GOPATH=$(GOPATH) go build -a -o $(BIN)
+	GOPATH=$(GOPATH) go build -a -ldflags "-X main.version $(VERSION)" -o $(BIN)
 
 clean:
 	rm -rf $(BUILD_PATH) $(BIN)

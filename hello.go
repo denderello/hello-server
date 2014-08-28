@@ -1,14 +1,20 @@
 package main
 
 import (
-	"os"
+	"fmt"
 	"log"
 	"net/http"
-	"github.com/gorilla/mux"
+	"os"
+
 	"github.com/gorilla/handlers"
+	"github.com/gorilla/mux"
 )
 
+var version string
+
 func main() {
+	fmt.Println("Hello Server version", version)
+
 	router := mux.NewRouter()
 	router.HandleFunc("/{names}", HomeHandler).
 		Methods("GET")
