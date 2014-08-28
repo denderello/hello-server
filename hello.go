@@ -10,7 +10,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var version string
+var version string = "dev"
 
 func main() {
 	fmt.Println("Hello Server version", version)
