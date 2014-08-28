@@ -12,7 +12,7 @@ SOURCE=$(shell find . -name '*.go')
 
 BIN := $(PROJECT)
 
-all: .gobuild get-deps build
+all: .gobuild get-deps $(BIN)
 
 get-deps:
 	GOPATH=$(GOPATH) go get github.com/gorilla/mux
@@ -22,7 +22,7 @@ get-deps:
 	mkdir -p $(D0_PATH)
 	cd "$(D0_PATH)" && ln -s ../../../.. $(PROJECT)
 
-build: 
+$(BIN): 
 	GOPATH=$(GOPATH) go build -a -o $(BIN)
 
 clean:
