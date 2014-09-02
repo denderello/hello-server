@@ -24,7 +24,7 @@ get-deps:
 	mkdir -p $(D0_PATH)
 	cd "$(D0_PATH)" && ln -s ../../../.. $(PROJECT)
 
-$(BIN): 
+$(BIN): $(SOURCE)
 	GOPATH=$(GOPATH) go build -a -ldflags "-X main.version $(VERSION)" -o $(BIN)
 
 clean:
