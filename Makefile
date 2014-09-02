@@ -2,7 +2,7 @@ PROJECT=hello-server
 
 BUILD_PATH := $(shell pwd)/.gobuild
 
-.PHONY=all get-deps build
+.PHONY=all get-deps build run-tests
 
 D0_PATH := "$(BUILD_PATH)/src/github.com/denderello"
 
@@ -29,3 +29,6 @@ $(BIN): $(SOURCE)
 
 clean:
 	rm -rf $(BUILD_PATH) $(BIN)
+
+run-tests: .gobuild
+	GOPATH=$(GOPATH) go test ./...
