@@ -30,5 +30,5 @@ $(BIN): $(SOURCE)
 clean:
 	rm -rf $(BUILD_PATH) $(BIN)
 
-run-tests: .gobuild
+run-tests: 
 	GOPATH=$(GOPATH) go test ./...
